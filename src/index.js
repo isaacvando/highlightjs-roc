@@ -6,7 +6,7 @@ Category: functional
 */
 
 /** @type LanguageFn */
-export default function (hljs) {
+module.exports = function (hljs) {
   const COMMENT = {
     variants: [
       hljs.COMMENT("--", "$"),
@@ -71,7 +71,7 @@ export default function (hljs) {
   ];
 
   return {
-    name: "Elm",
+    name: "Roc",
     keywords: KEYWORDS,
     contains: [
       // Top-level constructions.
@@ -123,4 +123,4 @@ export default function (hljs) {
     ],
     illegal: /;/,
   };
-}
+};

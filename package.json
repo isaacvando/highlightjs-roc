@@ -2,7 +2,7 @@
   "name": "highlightjs-roc",
   "version": "0.1.0",
   "description": "highlight.js syntax definition for Roc",
-  "main": "dist/roc.min.js",
+  "main": "src/index.js",
   "module": "dist/roc.es.min.js",
   "scripts": {
     "build:cjs": "webpack --config webpack.cjs.config.js",
