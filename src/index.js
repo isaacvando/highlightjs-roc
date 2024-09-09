@@ -13,5 +13,6 @@ module.exports = (hljs) => {
       keyword:
         "if then else when is as crash debug import module exposing expect implements app package platform",
     },
+    contains: [hljs.COMMENT("#", "$", { contains: [] })],
   };
 };
