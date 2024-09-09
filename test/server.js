@@ -236,6 +236,11 @@ app.get("/", (req, res) => {
         when result is
             Ok s -> s
             _ -> crash "There was an unexpected error converting back to Str"
+
+
+    expect
+      foo = bar {}
+      foo == Ok "hello"
    `;
 
   const highlighted = hljs.highlight(rocCode, { language: "roc" }).value;
