@@ -135,7 +135,7 @@ app.get("/", (req, res) => {
                 _ -> Err (UnableToParseDef line)
 
     parseDef : List Str, Defs -> Result (List Str) _
-    parseDef = \tokens, defs ->
+    parseDef = \\tokens, defs ->
         List.walkTry tokens [] \ops, token ->
             when Dict.get defs token is
                 Ok body -> List.concat ops body |> Ok
@@ -143,13 +143,13 @@ app.get("/", (req, res) => {
                 _ -> Err (UnknownName token)
 
     isBuiltin : Str -> Bool
-    isBuiltin = \token ->
+    isBuiltin = \\token ->
         builtins = ["dup", "drop", "swap", "over", "+", "-", "*", "/"]
         (builtins |> List.contains token) || (Result.isOk (Str.toI16 token))
 
     flattenDefs : List Str, Defs -> List Str
-    flattenDefs = \tokens, defs ->
-        List.joinMap tokens \token ->
+    flattenDefs = \\tokens, defs ->
+        List.joinMap tokens \\token ->
             when Dict.get defs token is
                 Ok body -> body
                 _ -> [token]

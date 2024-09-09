@@ -13,6 +13,14 @@ module.exports = (hljs) => {
       keyword:
         "if then else when is as crash debug import module exposing expect implements app package platform",
     },
-    contains: [hljs.COMMENT("#", "$", { contains: [] })],
+    contains: [
+      hljs.COMMENT("#", "$", { contains: [] }),
+      {
+        className: "symbol",
+        begin:
+          "->|<-|==|!=|>=|<=|&&|\\|\\|\\+|\\-|\\*|\\/|\\^|%|\\\\|\\.\\.|_|\\|>|\\?|\\!|:",
+        relevance: 0,
+      },
+    ],
   };
 };
