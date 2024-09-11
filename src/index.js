@@ -33,6 +33,12 @@ module.exports = (hljs) => {
         end: '"""',
         contains: [hljs.BACKSLASH_ESCAPE],
       },
+      {
+        // This matches tags, types, and module names
+        className: "type",
+        begin: "\\b[A-Z][a-zA-Z0-9_]*\\b",
+        relevance: 0,
+      },
     ],
   };
 };
