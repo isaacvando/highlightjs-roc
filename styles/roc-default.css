@@ -47,3 +47,11 @@
 .hljs-strong {
     font-weight: bold;
 }
+
+.hljs-interpolation-delimiter {
+    color: #808080;
+}
+
+.hljs-interpolation-content {
+    color: inherit;
+}

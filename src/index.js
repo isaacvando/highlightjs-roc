@@ -14,11 +14,16 @@ module.exports = (hljs) => {
     end: /\)/,
     contains: [
       {
-        className: "type",
-        begin: "\\b[A-Z][a-zA-Z0-9_]*\\b",
+        begin: /\$\(/,
+        end: /\)/,
+        className: "interpolation-delimiter",
       },
-      "self",
-      hljs.NUMBER_MODE,
+      {
+        begin: /(?<=\$\()/,
+        end: /(?=\))/,
+        subLanguage: "roc",
+        className: "interpolation-content",
+      },
     ],
   };
 
@@ -33,7 +38,7 @@ module.exports = (hljs) => {
       {
         className: "symbol",
         begin:
-          "->|<-|==|!=|>=|<=|&&|\\|\\|\\+|\\-|\\*|\\/|\\^|%|\\\\|\\.\\.|_|\\|>|\\?|\\!|:|\\[|\\]|\\(|\\)|\\{|\\}|\\\\|,|\\.",
+          "->|<-|==|!=|>=|<=|&&|\\|\\|\\+|\\-|\\*|\\/|\\^|%|\\\\|\\.\\.|_|\\|>|\\?|\\!|:|\\[|\\]|\\(|\\)|\\{|\\}",
       },
       {
         className: "string",
