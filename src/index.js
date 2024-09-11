@@ -21,6 +21,18 @@ module.exports = (hljs) => {
           "->|<-|==|!=|>=|<=|&&|\\|\\|\\+|\\-|\\*|\\/|\\^|%|\\\\|\\.\\.|_|\\|>|\\?|\\!|:",
         relevance: 0,
       },
+      {
+        className: "string",
+        begin: '"',
+        end: '"',
+        contains: [hljs.BACKSLASH_ESCAPE],
+      },
+      {
+        className: "string",
+        begin: '"""',
+        end: '"""',
+        contains: [hljs.BACKSLASH_ESCAPE],
+      },
     ],
   };
 };
