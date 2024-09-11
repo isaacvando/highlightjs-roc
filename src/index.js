@@ -7,6 +7,21 @@ Category: functional
 
 /** @type LanguageFn */
 module.exports = (hljs) => {
+  const ROC_IDENT = "[a-zA-Z_][a-zA-Z0-9_]*";
+  const INTERPOLATION = {
+    className: "subst",
+    begin: /\$\(/,
+    end: /\)/,
+    contains: [
+      {
+        className: "type",
+        begin: "\\b[A-Z][a-zA-Z0-9_]*\\b",
+      },
+      "self",
+      hljs.NUMBER_MODE,
+    ],
+  };
+
   return {
     name: "Roc",
     keywords: {
@@ -19,25 +34,22 @@ module.exports = (hljs) => {
         className: "symbol",
         begin:
           "->|<-|==|!=|>=|<=|&&|\\|\\|\\+|\\-|\\*|\\/|\\^|%|\\\\|\\.\\.|_|\\|>|\\?|\\!|:",
-        relevance: 0,
       },
       {
         className: "string",
         begin: '"',
         end: '"',
-        contains: [hljs.BACKSLASH_ESCAPE],
+        contains: [hljs.BACKSLASH_ESCAPE, INTERPOLATION],
       },
       {
         className: "string",
         begin: '"""',
         end: '"""',
-        contains: [hljs.BACKSLASH_ESCAPE],
+        contains: [hljs.BACKSLASH_ESCAPE, INTERPOLATION],
       },
       {
-        // This matches tags, types, and module names
         className: "type",
         begin: "\\b[A-Z][a-zA-Z0-9_]*\\b",
-        relevance: 0,
       },
     ],
   };
