@@ -14,11 +14,6 @@ module.exports = (hljs) => {
     end: /\)/,
     contains: [
       {
-        begin: /\$\(/,
-        end: /\)/,
-        className: "interpolation-delimiter",
-      },
-      {
         begin: /(?<=\$\()/,
         end: /(?=\))/,
         subLanguage: "roc",

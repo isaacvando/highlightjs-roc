@@ -17,7 +17,7 @@
 }
 
 .hljs-subst {
-    color: #e45649;
+    color: #808080;
 }
 
 .hljs-number {
@@ -48,10 +48,6 @@
     font-weight: bold;
 }
 
-.hljs-interpolation-delimiter {
-    color: #808080;
-}
-
 .hljs-interpolation-content {
-    color: inherit;
+    color: #000000;
 }
