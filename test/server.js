@@ -1,12 +1,16 @@
 const express = require("express");
 const hljs = require("highlight.js");
 const hljsRoc = require("highlightjs-roc");
+const path = require("path");
 
 const app = express();
 const port = 3000;
 
 // Register your custom Roc language with highlight.js
 hljs.registerLanguage("roc", hljsRoc);
+
+// serve static files
+app.use("/highlightjs-roc", express.static(path.join(__dirname, "../")));
 
 app.get("/", (req, res) => {
   const rocCode = `
@@ -250,6 +254,7 @@ app.get("/", (req, res) => {
      <html>
        <head>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+         <link rel="stylesheet" href="/highlightjs-roc/styles/roc-default.css">
          <style>
            pre { padding: 20px; background-color: #f0f0f0; }
          </style>

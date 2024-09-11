@@ -4,6 +4,10 @@
   "description": "highlight.js syntax definition for Roc",
   "main": "src/index.js",
   "module": "dist/roc.es.min.js",
+  "files": [
+    "src",
+    "styles"
+  ],
   "scripts": {
     "build:cjs": "webpack --config webpack.cjs.config.js",
     "build:esm": "webpack --config webpack.esm.config.js",
