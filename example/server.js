@@ -256,10 +256,13 @@ app.get("/", (req, res) => {
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
          <link rel="stylesheet" href="/highlightjs-roc/styles/roc-default.css">
          <style>
-           pre { padding: 20px; background-color: #f0f0f0; }
+            body {
+            color: #ffffff
+            }
+           pre { padding: 20px; background-color: #303030}
          </style>
        </head>
-       <body>
+       <body class="dark-mode">
          <h1>Roc Syntax Highlighting Test</h1>
          <pre><code class="language-roc">${highlighted}</code></pre>
        </body>
