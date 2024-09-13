@@ -14,14 +14,14 @@
 }
 
 .dark-mode {
-    --background: #282c34;
+    --background: #000000;
     --text: #ffffff;
     --comment: #5c6370;
     --keyword: #c678dd;
-    --string: #98c379;
+    --string: #6cd15c;
     --subst: #9ca0a4;
     --number: #d19a66;
-    --type: #56b6c2;
+    --type: #4279fc;
     --symbol: #9ca0a4;
     --title: #61afef;
     --built-in: #e6c07b;

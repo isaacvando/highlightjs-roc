@@ -255,16 +255,10 @@ app.get("/", (req, res) => {
        <head>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
          <link rel="stylesheet" href="/highlightjs-roc/styles/roc-default.css">
-         <style>
-            body {
-            color: #ffffff
-            }
-           pre { padding: 20px; background-color: #303030}
-         </style>
        </head>
-       <body class="dark-mode">
+       <body>
          <h1>Roc Syntax Highlighting Test</h1>
-         <pre><code class="language-roc">${highlighted}</code></pre>
+         <pre><code class="hljs dark-mode">${highlighted}</code></pre>
        </body>
      </html>
    `;
