@@ -7,7 +7,6 @@ Category: functional
 
 /** @type LanguageFn */
 module.exports = (hljs) => {
-  const ROC_IDENT = "[a-zA-Z_][a-zA-Z0-9_]*";
   const INTERPOLATION = {
     className: "subst",
     begin: /\$\(/,

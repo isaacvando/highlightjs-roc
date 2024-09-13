@@ -28,3 +28,7 @@ Or if you're using a bundler, you can import it in your JavaScript:
 ```javascript
 import "highlightjs-roc/styles/roc-default.css";
 ```
+
+### Contributing
+
+PRs are very welcome! An easy way to test your changes is to update [roc.js](./src/roc.js) or [roc-default.css](./styles/roc-default.css), and then run `node example/server.js` and open [localhost:3000](http://localhost:3000) to see your changes.
