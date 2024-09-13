@@ -81,3 +81,7 @@
 .hljs-interpolation-content {
     color: var(--interpolation);
 }
+
+.hljs-char {
+    color: var(--string);
+}

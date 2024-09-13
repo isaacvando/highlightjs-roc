@@ -48,6 +48,14 @@ module.exports = (hljs) => {
         contains: [hljs.BACKSLASH_ESCAPE, INTERPOLATION],
       },
       {
+        className: "char",
+        begin: "'.",
+        end: "'",
+        illegal: "\\n",
+        contains: [hljs.BACKSLASH_ESCAPE],
+        relevance: 0,
+      },
+      {
         className: "type",
         begin: "\\b[A-Z][a-zA-Z0-9_]*\\b",
       },
