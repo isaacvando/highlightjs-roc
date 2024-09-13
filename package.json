@@ -2,16 +2,18 @@
   "name": "highlightjs-roc",
   "version": "0.1.0",
   "description": "highlight.js syntax definition for Roc",
-  "main": "src/index.js",
+  "main": "src/roc.js",
   "module": "dist/roc.es.min.js",
   "files": [
     "src",
-    "styles"
+    "styles",
+    "dist"
   ],
   "scripts": {
     "build:cjs": "webpack --config webpack.cjs.config.js",
     "build:esm": "webpack --config webpack.esm.config.js",
-    "build": "npm run build:cjs && npm run build:esm"
+    "build": "npm run build:cjs && npm run build:esm",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,10 @@
   "keywords": [
     "roc",
     "highlight.js",
-    "highlightjs"
+    "highlightjs",
+    "syntax",
+    "highlighting",
+    "language"
   ],
   "author": "Isaac Van Doren",
   "license": "UPL",
@@ -28,7 +33,10 @@
     "url": "https://github.com/isaacvando/highlightjs-roc/issues"
   },
   "homepage": "https://github.com/isaacvando/highlightjs-roc",
-  "dependencies": {
+  "peerDependencies": {
+    "highlight.js": "^11.0.0"
+  },
+  "devDependencies": {
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }

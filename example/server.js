@@ -258,7 +258,7 @@ app.get("/", (req, res) => {
        </head>
        <body>
          <h1>Roc Syntax Highlighting Test</h1>
-         <pre><code class="hljs dark-mode">${highlighted}</code></pre>
+         <pre><code class="hljs">${highlighted}</code></pre>
        </body>
      </html>
    `;
