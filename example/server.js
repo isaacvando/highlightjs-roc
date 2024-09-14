@@ -1,9 +1,9 @@
-import express from 'express';
-import hljs from 'highlight.js';
-import hljsRoc from 'highlightjs-roc';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import { readFile } from 'fs/promises';
+import express from "express";
+import hljs from "highlight.js";
+import hljsRoc from "highlightjs-roc";
+import { fileURLToPath } from "url";
+import path from "path";
+import { readFile } from "fs/promises";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,10 +13,10 @@ const port = 3000;
 
 let rocCode;
 try {
-  rocCode = await readFile(path.join(__dirname, 'example.roc'), 'utf8');
+  rocCode = await readFile(path.join(__dirname, "example.roc"), "utf8");
 } catch (error) {
-  console.error('Error reading example.roc:', error);
-  rocCode = 'Error loading Roc sample code';
+  console.error("Error reading example.roc:", error);
+  rocCode = "Error loading Roc sample code";
 }
 
 // Register your custom Roc language with highlight.js
@@ -24,7 +24,6 @@ hljs.registerLanguage("roc", hljsRoc);
 
 // serve static files
 app.use("/highlightjs-roc", express.static(path.join(__dirname, "../")));
-
 
 app.get("/", (req, res) => {
   const highlighted = hljs.highlight(rocCode, { language: "roc" }).value;
