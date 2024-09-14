@@ -6,7 +6,7 @@ Category: functional
 */
 
 /** @type LanguageFn */
-module.exports = (hljs) => {
+export default function(hljs) {
   const INTERPOLATION = {
     className: "subst",
     begin: /\$\(/,
