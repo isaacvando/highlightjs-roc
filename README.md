@@ -4,11 +4,11 @@ Syntax highlighting for Roc via highlight.js.
 
 ### Usage
 
-To use the package with Node, require the module and register it with highlight.js:
+To use the package with Node, import the module and register it with highlight.js:
 
 ```javascript
-var hljs = require("highlightjs");
-var hljsRoc = require("highlightjs-roc");
+import hljs from "highlight.js";
+import hljsRoc from "highlightjs-roc";
 
 hljs.registerLanguage("roc", hljsRoc);
 hljs.highlightAll();

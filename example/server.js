@@ -1,7 +1,11 @@
-const express = require("express");
-const hljs = require("highlight.js");
-const hljsRoc = require("highlightjs-roc");
-const path = require("path");
+import express from 'express';
+import hljs from 'highlight.js';
+import hljsRoc from 'highlightjs-roc';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3000;
@@ -253,7 +257,7 @@ app.get("/", (req, res) => {
      <!DOCTYPE html>
      <html>
        <head>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css">
          <link rel="stylesheet" href="/highlightjs-roc/styles/roc-default.css">
        </head>
        <body>
